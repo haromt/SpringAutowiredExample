@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
+	<context:annotation-config />
+	<bean id="customer" class="hu.mavrt.tutorials.Customer">
+
+	</bean>
+
+	<util:constant id="locale" static-field="hu.mavrt.tutorials.Location.HU" />
+
+
+	<bean id="person" class="hu.mavrt.tutorials.Person">
+		<property name="surename" value="Tóthi" />
+		<property name="firstname" value="Tamás" />
+		<qualifier value="tomi"></qualifier>
+	</bean>
+
+	<bean id="person2" class="hu.mavrt.tutorials.Person" primary="true">
+		<property name="surename" value="Huszár" />
+		<property name="firstname" value="Daniella" />
+		<qualifier value="dancsi"></qualifier>
+	</bean>
+
+</beans>
